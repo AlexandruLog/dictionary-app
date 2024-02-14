@@ -1,0 +1,16 @@
+.search-word-component > input,
+.search-word-component > button {
+  font-size: 1.25rem;
+  padding: 5px 10px;
+  margin: 2px;
+}
+
+.search-word-component > p {
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.search-word-component > p:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
