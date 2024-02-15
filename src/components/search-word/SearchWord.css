@@ -2,7 +2,11 @@
 .search-word-component > button {
   font-size: 1.25rem;
   padding: 5px 10px;
-  margin: 2px;
+  margin: 4px;
+}
+
+.search-word-component > button {
+  cursor: pointer;
 }
 
 .search-word-component > p {
