@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import SearchWord from "../search-word/SearchWord";
 import "./AddWord.css";
 
-function AddWord() {
-  const [dictionary, setDictionary] = useState([]);
+function AddWord({ book, setBook, showMessage }) {
   const [input, setInput] = useState("");
 
   function handleAddWord() {
-    if (
-      !dictionary.includes(input.trim().toLowerCase()) &&
-      input.trim() !== ""
-    ) {
-      setDictionary([...dictionary, input.trim().toLowerCase()]);
+    if (!book.includes(input.trim().toLowerCase()) && input.trim() !== "") {
+      setBook([...book, input.trim().toLowerCase()]);
+      showMessage("Cuvant adaugat cu succes.");
+    } else {
+      showMessage("Cuvantul exista deja in dictionar.");
     }
     setInput("");
   }
@@ -26,7 +24,6 @@ function AddWord() {
         }}
       />
       <button onClick={handleAddWord}>Add</button>
-      <SearchWord book={dictionary} />
     </div>
   );
 }
