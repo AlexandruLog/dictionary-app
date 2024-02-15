@@ -8,6 +8,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -17,4 +20,39 @@ body {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 12px #d2d2db;
+}
+
+.added-status,
+.existance-status,
+.dictionary-words {
+  font-size: 1.25rem;
+  color: #141414;
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+}
+/* --------------- */
+.added-status {
+  top: 0;
+  margin: 0;
+}
+
+.show-added-status {
+  top: -40px;
+}
+
+/* -------------- */
+
+.existance-status,
+.dictionary-words {
+  bottom: 0;
+}
+
+.show-existance-status {
+  bottom: -50px;
+}
+
+.show-dictionary-words {
+  bottom: -120px;
 }
