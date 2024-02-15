@@ -2,9 +2,10 @@
 .add-word-component > button {
   font-size: 1.25rem;
   padding: 5px 10px;
-  margin: 2px;
+  margin: 4px;
 }
 
 .add-word-component > button {
   width: 80.5px;
+  cursor: pointer;
 }
