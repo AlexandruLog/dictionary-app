@@ -5,29 +5,67 @@ import SearchWord from "./components/search-word/SearchWord";
 
 function App() {
   const [dictionary, setDictionary] = useState([]);
+  const [isActive, setIsActive] = useState(false);
+  const [exists, setExists] = useState(false);
+  const [showWords, setShowWords] = useState(false);
+  const [addedContent, setAddedContent] = useState("");
+  const [searchWordInfo, setSearchWordInfo] = useState("");
 
-  function toggleAddedText(message) {
-    const addedInfoPara = document.getElementsByClassName("added-status")[0];
-    addedInfoPara.textContent = message;
-    addedInfoPara.classList.add("show-added-status");
+  function toggleClass(message) {
+    setAddedContent(message);
+    setIsActive(true);
     setTimeout(() => {
-      addedInfoPara.classList.remove("show-added-status");
+      setIsActive(false);
     }, 1500);
+  }
+
+  function checkExistance(message) {
+    setSearchWordInfo(message);
+    setExists(true);
+    setTimeout(() => {
+      setExists(false);
+    }, 1500);
+  }
+
+  function toggleWord() {
+    console.log(dictionary);
+    setShowWords(true);
+    setTimeout(() => {
+      setShowWords(false);
+    }, 2000);
   }
 
   return (
     <div className="app">
-      <p className="added-status"></p>
+      <p className={`added-status ${isActive ? "show-added-status" : ""}`}>
+        {addedContent}
+      </p>
       <div className="container">
         <AddWord
           book={dictionary}
           setBook={setDictionary}
-          showMessage={toggleAddedText}
+          toggleClass={toggleClass}
         />
-        <SearchWord book={dictionary} />
+        <SearchWord
+          book={dictionary}
+          checkExistance={checkExistance}
+          toggleWord={toggleWord}
+        />
       </div>
-      <p className="existance-status"></p>
-      <p className="dictionary-words"></p>
+      <p
+        className={`existance-status ${exists ? "show-existance-status" : ""}`}
+      >
+        {searchWordInfo}
+      </p>
+      <p
+        className={`dictionary-words ${
+          showWords ? "show-dictionary-words" : ""
+        }`}
+      >
+        {dictionary.length !== 0
+          ? dictionary
+          : "Nu exista cuvinte in dictionar"}
+      </p>
     </div>
   );
 }

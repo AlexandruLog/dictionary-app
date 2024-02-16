@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import "./AddWord.css";
 
-function AddWord({ book, setBook, showMessage }) {
+function AddWord({ book, setBook, toggleClass }) {
   const [input, setInput] = useState("");
 
   function handleAddWord() {
     if (!book.includes(input.trim().toLowerCase()) && input.trim() !== "") {
-      setBook([...book, input.trim().toLowerCase()]);
-      showMessage("Cuvant adaugat cu succes.");
-    } else {
-      showMessage("Cuvantul exista deja in dictionar.");
+      if (book.length !== 0) {
+        setBook([...book, ", ", input.trim().toLowerCase()]);
+      } else {
+        setBook([...book, input.trim().toLowerCase()]);
+      }
+      toggleClass("Cuvant adaugat cu succes.");
+    } else if (input !== "") {
+      toggleClass("Cuvantul exista deja in dictionar.");
     }
     setInput("");
   }
