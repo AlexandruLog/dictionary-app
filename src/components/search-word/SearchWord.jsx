@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./SearchWord.css";
 
-function SearchWord({ book, checkExistance, toggleWord }) {
+function SearchWord({ book, checkExistence, toggleWord }) {
   const [input, setInput] = useState("");
 
   function handleSearchWord() {
     if (book.includes(input.trim().toLowerCase())) {
-      checkExistance("Exista in dictionar ✔");
+      checkExistence("Exista in dictionar ✔");
     } else {
-      checkExistance("Nu exista in dictionar ✖");
+      checkExistence("Nu exista in dictionar ✖");
     }
     setInput("");
   }

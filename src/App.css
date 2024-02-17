@@ -23,7 +23,7 @@ body {
 }
 
 .added-status,
-.existance-status,
+.existence-status,
 .dictionary-words {
   font-size: 1.25rem;
   color: #141414;
@@ -44,12 +44,12 @@ body {
 
 /* -------------- */
 
-.existance-status,
+.existence-status,
 .dictionary-words {
   bottom: 0;
 }
 
-.show-existance-status {
+.show-existence-status {
   bottom: -50px;
 }
 

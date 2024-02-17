@@ -19,7 +19,7 @@ function App() {
     }, 1500);
   }
 
-  function checkExistance(message) {
+  function checkExistence(message) {
     setSearchWordInfo(message);
     setExists(true);
     setTimeout(() => {
@@ -28,11 +28,10 @@ function App() {
   }
 
   function toggleWord() {
-    console.log(dictionary);
     setShowWords(true);
     setTimeout(() => {
       setShowWords(false);
-    }, 2000);
+    }, 5000);
   }
 
   return (
@@ -48,12 +47,12 @@ function App() {
         />
         <SearchWord
           book={dictionary}
-          checkExistance={checkExistance}
+          checkExistence={checkExistence}
           toggleWord={toggleWord}
         />
       </div>
       <p
-        className={`existance-status ${exists ? "show-existance-status" : ""}`}
+        className={`existence-status ${exists ? "show-existence-status" : ""}`}
       >
         {searchWordInfo}
       </p>
