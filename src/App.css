@@ -21,38 +21,3 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 12px #d2d2db;
 }
-
-.added-status,
-.existence-status,
-.dictionary-words {
-  font-size: 1.25rem;
-  color: #141414;
-  position: absolute;
-  margin: 0;
-  z-index: -1;
-  transition: all 0.2s ease-in-out;
-}
-/* --------------- */
-.added-status {
-  top: 0;
-  margin: 0;
-}
-
-.show-added-status {
-  top: -40px;
-}
-
-/* -------------- */
-
-.existence-status,
-.dictionary-words {
-  bottom: 0;
-}
-
-.show-existence-status {
-  bottom: -50px;
-}
-
-.show-dictionary-words {
-  bottom: -120px;
-}

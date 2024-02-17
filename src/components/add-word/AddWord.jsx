@@ -3,6 +3,8 @@ import "./AddWord.css";
 
 function AddWord({ book, setBook, toggleClass }) {
   const [input, setInput] = useState("");
+  const [isActive, setIsActive] = useState(false);
+  const [addedContent, setAddedContent] = useState("");
 
   function handleAddWord() {
     if (!book.includes(input.trim().toLowerCase()) && input.trim() !== "") {
@@ -18,6 +20,14 @@ function AddWord({ book, setBook, toggleClass }) {
     setInput("");
   }
 
+  function toggleClass(message) {
+    setAddedContent(message);
+    setIsActive(true);
+    setTimeout(() => {
+      setIsActive(false);
+    }, 1500);
+  }
+
   return (
     <div className="add-word-component">
       <input
@@ -28,6 +38,10 @@ function AddWord({ book, setBook, toggleClass }) {
         }}
       />
       <button onClick={handleAddWord}>Add</button>
+
+      <p className={`added-status ${isActive ? "show-added-status" : ""}`}>
+        {addedContent}
+      </p>
     </div>
   );
 }

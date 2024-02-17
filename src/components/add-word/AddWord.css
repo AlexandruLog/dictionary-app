@@ -9,3 +9,24 @@
   width: 80.5px;
   cursor: pointer;
 }
+
+.added-status {
+  font-size: 1.25rem;
+  color: #141414;
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Moving Pragraphs */
+.added-status {
+  top: 0;
+  margin: 0;
+  width: 87%;
+  text-align: center;
+}
+
+.show-added-status {
+  top: -40px;
+}

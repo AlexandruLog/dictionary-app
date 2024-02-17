@@ -18,3 +18,24 @@
 .search-word-component > p:hover {
   color: rgba(0, 0, 0, 0.5);
 }
+
+.existence-status,
+.dictionary-words {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.25rem;
+  width: 88%;
+  text-align: center;
+  color: #141414;
+  margin: 0;
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+}
+
+.show-existence-status {
+  bottom: -50px;
+}
+
+.show-dictionary-words {
+  bottom: -120px;
+}
